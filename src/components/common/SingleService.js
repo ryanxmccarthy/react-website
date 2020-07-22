@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import SingleService from './SingleService';
 
-const services = [
-    {title: 'E-Commerce', description: '', icon: 'fa-shopping-cart'}
-]
-
-class SingeService extends Component {
+class SingleService extends Component {
     render() {
         return(
             <div class="col-md-4">
@@ -14,10 +9,10 @@ class SingeService extends Component {
                     <i class={`fas ${this.props.icon} fa-stack-1x fa-inverse`}></i>
                 </span>
                 <h4 class="my-3">{this.props.title}</h4>
-                <p class="text-muted">{this.props.description</p>
+                <p class="text-muted">{this.props.description}</p>
             </div>
         )
     }
 }
 
-export default SingeService;
+export default SingleService;
