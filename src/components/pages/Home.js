@@ -22,7 +22,6 @@ class Home extends Component {
                 <Services />
                 <Portfolio />
                 <Timeline />
-                {/* <Team /> */}
             </div>
         )
     }

@@ -14,7 +14,6 @@ class About extends Component {
                     image={image}
                 />
                 <Timeline />
-                {/* <Team /> */}
             </div>
         )
     }
