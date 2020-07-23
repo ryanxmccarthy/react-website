@@ -4,6 +4,7 @@ import image from '../assets/image/header-bg.jpg'
 
 // Re-usable components
 import Services from '../common/Services';
+import Portfolio from '../common/Portfolio';
 
 class Home extends Component {
     render() {
@@ -19,6 +20,8 @@ class Home extends Component {
                 />
 
                 <Services />
+
+                <Portfolio />
             </div>
         )
     }
