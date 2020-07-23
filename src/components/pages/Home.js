@@ -5,6 +5,7 @@ import image from '../assets/image/header-bg.jpg'
 // Re-usable components
 import Services from '../common/Services';
 import Portfolio from '../common/Portfolio';
+import Timeline from '../common/Timeline';
 
 class Home extends Component {
     render() {
@@ -18,10 +19,10 @@ class Home extends Component {
                     showButton={true}
                     image={image}
                 />
-
                 <Services />
-
                 <Portfolio />
+                <Timeline />
+                {/* <Team /> */}
             </div>
         )
     }
