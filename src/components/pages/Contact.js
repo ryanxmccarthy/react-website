@@ -16,10 +16,6 @@ const fields = {
 }
 
 class Contact extends Component {
-    submitForm = (e) => {
-        alert('Form submitted, thank you!');
-    }
-
     render() {
         return (
             <section className="page-section" id="contact">
@@ -29,8 +25,10 @@ class Contact extends Component {
                         <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                     </div>
                     <form 
+                        onSubmit={this.props.handleSubmit}
                         id="contactForm" 
-                        name="sentMessage" novalidate="novalidate"
+                        name="sentMessage" 
+                        novalidate="novalidate"
                     >
                         <div className="row align-items-stretch mb-5">
                             {fields.sections.map((section, sectionIndex) => {
@@ -43,6 +41,9 @@ class Contact extends Component {
                                                         value={this.props.values[field.name]}
                                                         name={field.name}
                                                         onChange={this.props.handleChange}
+                                                        onBlur={this.props.handleBlur}
+                                                        touched={(this.props.touched[field.name])}
+                                                        errors={this.props.errors[field.name]}
                                                     />
                                         })}
                                     </div>
@@ -72,18 +73,7 @@ export default withFormik({
         phone: '',
         message: '',
     }),
-    validate: values => {
-        const errors = {};
-
-        Object.keys(values).map(v => {
-            if(!values[v]) {
-                errors[v] = 'Required';
-            }
-        })
-
-        return errors;
-    },
     handleSubmit: (values, {setSubmitting}) => {
-        alert("You've submitted the form");
+        alert("You've submitted the form", JSON.stringify(values));
     }
 })(Contact);
