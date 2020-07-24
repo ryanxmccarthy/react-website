@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Field from '../common/Field';
+import {withFormik} from 'formik';
 
 const fields = {
     sections: [
@@ -15,16 +16,6 @@ const fields = {
 }
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            message: ''
-        }
-    }
-
     submitForm = (e) => {
         alert('Form submitted, thank you!');
     }
@@ -49,10 +40,9 @@ class Contact extends Component {
                                             return <Field 
                                                         {...field} 
                                                         key={i} 
-                                                        value={this.state[field.name]}
-                                                        onChange={e => this.setState({
-                                                            [field.name]: e.target.value
-                                                        })}
+                                                        value={this.props.values[field.name]}
+                                                        name={field.name}
+                                                        onChange={this.props.handleChange}
                                                     />
                                         })}
                                     </div>
@@ -75,4 +65,25 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default withFormik({
+    mapPropsToValues: () => ({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+    }),
+    validate: values => {
+        const errors = {};
+
+        Object.keys(values).map(v => {
+            if(!values[v]) {
+                errors[v] = 'Required';
+            }
+        })
+
+        return errors;
+    },
+    handleSubmit: (values, {setSubmitting}) => {
+        alert("You've submitted the form");
+    }
+})(Contact);
