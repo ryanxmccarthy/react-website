@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Field from '../common/Field';
 import {withFormik} from 'formik';
+import * as Yup from 'yup';
 
 const fields = {
     sections: [
@@ -56,7 +57,6 @@ class Contact extends Component {
                                 className="btn btn-primary btn-xl text-uppercase" 
                                 id="sendMessageButton" 
                                 type="submit"
-                                onClick={e => this.submitForm(e)}
                             >Send Message</button>
                         </div>
                     </form>
@@ -72,6 +72,9 @@ export default withFormik({
         email: '',
         phone: '',
         message: '',
+    }),
+    validationSchema: Yup.object().shape({
+        name: Yup.string().min(3, 'Name must be three characters long').required('This field is required')
     }),
     handleSubmit: (values, {setSubmitting}) => {
         alert("You've submitted the form", JSON.stringify(values));
