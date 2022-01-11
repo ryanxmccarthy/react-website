@@ -5,14 +5,14 @@ import React from 'react';
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Router>
         <Navbar />
         <Routes>
           <Route path='/' exact />
         </Routes>
       </Router>
-    </React.Fragment>
+    </>
       
   );
 }
