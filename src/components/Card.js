@@ -5,7 +5,7 @@ function Card() {
   return (
     <>
         <li className='cards__item'>
-            <Link className='cards__item__link'>
+            <Link to='/' className='cards__item__link'>
                 <figure className='cards__item__pic-wrap'>
                      <img src='/' alt='Travel' className='cards__item__img' />
                 </figure>
