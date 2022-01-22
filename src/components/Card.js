@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Card() {
+function Card(props) {
   return (
     <>
         <li className='cards__item'>
-            <Link to='/' className='cards__item__link'>
+            <Link to='/' className='cards__item__link' to={props.path}>
                 <figure className='cards__item__pic-wrap'>
                      <img src='/' alt='Travel' className='cards__item__img' />
                 </figure>
