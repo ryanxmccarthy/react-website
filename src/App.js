@@ -14,7 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' index element={<Home />} />
-          <Route path='/services' component={<Services />} />
+          <Route path='/services' element={<Services />} />
           <Route path='/products' component={<Products />} />
           <Route path='/sign-up' component={<SignUp />} />
         </Routes>
