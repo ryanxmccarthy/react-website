@@ -58,6 +58,18 @@ function Footer() {
                       TRVL <i className='fab fa-typo3' />
                   </Link>
               </div>
+              <small className='website-rights'>TRVL 2020</small>
+              <div className='social-icons'>
+                  <Link to='/' target='_blank' aria-label='Facebook' className='social-icon-link facebook'>
+                      <i className='fab fa-facebook-f'></i>
+                  </Link>
+                  <Link to='/' target='_blank' aria-label='Instagram' className='social-icon-link instagram'>
+                      <i className='fab fa-instagram'></i>
+                  </Link>
+                  <Link to='/' target='_blank' aria-label='Youtube' className='social-icon-link youtube'>
+                      <i className='fab fa-youtube'></i>
+                  </Link>
+              </div>
           </div>
       </section>
   </div>
